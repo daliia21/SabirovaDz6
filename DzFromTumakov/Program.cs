@@ -178,7 +178,7 @@ namespace DzFromTumakov
 
             public void CalculatingThecountApartmentsInFloor()
             {
-                int countApartmentsInFloor = countApartments / countFloor;
+                int countApartmentsInFloor = countApartments / countEntrance / countFloor;
                 Console.WriteLine($"Количество квартир на этаже:{countApartmentsInFloor}");
 
             }
