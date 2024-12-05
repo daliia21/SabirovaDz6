@@ -127,7 +127,7 @@ namespace DzFromTumakov
 
             Console.WriteLine("Домашнее задание 7.1");
 
-            Building building1 = new Building(70, 9, 100, 2);
+            Building building1 = new Building(20, 7, 140, 2);
             building1.ShowInfo();
             building1.CalculatingTheHeighFloor();
             building1.CalculatingThecountApartmentsInEntrance();
@@ -145,14 +145,14 @@ namespace DzFromTumakov
             private int countFloor;
             private int countApartments;
             private int countEntrance;
-            public Building(float height, int floor, int apartmens, int entrance)
+            public Building(float height, int countFloor, int countApartments, int countEntrance)
             {
                 buildingNumber = currentId++;
 
                 this.height = height;
-                this.countFloor = floor;
-                this.countApartments = apartmens;
-                this.countEntrance = entrance;
+                this.countFloor = countFloor;
+                this.countApartments = countApartments;
+                this.countEntrance = countEntrance;
             }
             public void ShowInfo()
             {
@@ -166,20 +166,20 @@ namespace DzFromTumakov
             public void CalculatingTheHeighFloor()
             {
                 float heightFloor = height / countFloor;
-                Console.WriteLine($"Высота этажа:{string.Format("{0:f1}", heightFloor)}");
+                Console.WriteLine($"Высота этажа: {string.Format("{0:f1}", heightFloor)}");
             }
 
             public void CalculatingThecountApartmentsInEntrance()
             {
                 int countApartmentsInEntrance = countApartments / countEntrance;
-                Console.WriteLine($"Количество квартир в подъезде:{countApartmentsInEntrance}");
+                Console.WriteLine($"Количество квартир в подъезде: {countApartmentsInEntrance}");
 
             }
 
             public void CalculatingThecountApartmentsInFloor()
             {
                 int countApartmentsInFloor = countApartments / countEntrance / countFloor;
-                Console.WriteLine($"Количество квартир на этаже:{countApartmentsInFloor}");
+                Console.WriteLine($"Количество квартир на этаже: {countApartmentsInFloor}");
 
             }
 

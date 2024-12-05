@@ -80,10 +80,10 @@
                 this.breedOfAnimals = breedOfAnimals;
             }
 
-            public Dog(string name, string ownerOfThePet)
-                : base(name, TypeOfPet.LandPet, ownerOfThePet, 45)
+            public Dog(string name, string ownerOfThePet, float weight)
+                : base(name, TypeOfPet.LandPet, ownerOfThePet, weight)
             {
-                breedOfAnimals = "Неизвестная";
+                breedOfAnimals = "Неизвестно";
             }
 
             public override void ToHeal()
@@ -107,16 +107,16 @@
         {
             public string color { get; set; }
 
-            public Fish(string name, string color, string хозяин)
-                : base(name, TypeOfPet.AquaticPet, хозяин, 20)
+            public Fish(string name, string color, string хозяин, float weight)
+                : base(name, TypeOfPet.AquaticPet, хозяин, weight)
             {
                 this.color = color;
             }
 
-            public Fish(string name, string ownerOfThePet)
-                : base(name, TypeOfPet.AquaticPet, ownerOfThePet, 20)
+            public Fish(string ownerOfThePet, float weight)
+                : base("Неизвестно", TypeOfPet.AquaticPet, ownerOfThePet, weight)
             {
-                color = "Неизвестный";
+                color = "Неизвестно";
             }
 
             public override void ToHeal()
@@ -141,7 +141,7 @@
             static void Main()
             {
                 Dog dog1 = new Dog("Арни", "Дворняжка", "Алмаз", 20);
-                Fish fish1 = new Fish("Искорка","Жёлтый", "Далия");
+                Fish fish1 = new Fish("Искорка","Жёлтый", "Далия", 10);
 
                 dog1.ShowInfo();
                 fish1.ShowInfo();
@@ -154,8 +154,8 @@
                 fish1.GiveADrink();
                 fish1.Gurgling();
 
-                Dog dog2 = new Dog("Джек", "Азалия");
-                Fish fish2 = new Fish("Золотая рыбка", "Ирина");
+                Dog dog2 = new Dog("Джек", "Азалия", 30);
+                Fish fish2 = new Fish("Ирина", 15);
 
                 dog2.ShowInfo();
                 fish2.ShowInfo();
@@ -165,7 +165,6 @@
                 Console.WriteLine("\nСписок животных в клинике:");
                 foreach (var pet in pets)
                 {
-                    pet.ShowInfo();
                     pet.ShowInfo();
                 }
 
